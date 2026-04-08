@@ -64,3 +64,38 @@
 </script>
 </body>
 </html>
+        <img src="6.png" style="width:100%">
+        <div class="text">Так же Вы сможете делиться своими новостями, а также публиковать различные посты со своими наблюдениями</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<script>
+    var slideIndex = 0;
+    var slideTimer;
+
+    function showSlides() {
+        var slides = document.getElementsByClassName("mySlides");
+        if (slideIndex >= slides.length) { slideIndex = 0 }
+        if (slideIndex < 0) { slideIndex = slides.length - 1 }
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+        slideTimer = setTimeout(function() {
+            plusSlides(1);
+            showSlides();
+        }, 10000);
+    }
+
+    function plusSlides(n) {
+        clearTimeout(slideTimer);
+        slideIndex += n;
+        showSlides();
+    }
+
+    window.addEventListener('load', showSlides);
+</script>
+</body>
+</html>
+>>>>>>> ae86d9adfa038b9b1b6f77b4d1bba4b656dfd287
